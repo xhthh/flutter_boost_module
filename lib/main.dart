@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boost/flutter_boost.dart';
+import 'package:flutterboost/frament_page.dart';
 
 import 'first_page.dart';
 
@@ -16,7 +17,8 @@ class _MyAppState extends State<MyApp> {
     // TODO: implement initState
     super.initState();
     FlutterBoost.singleton.registerPageBuilders({
-      'firstPage': (pageName, params, _) => FirstRouteWidget(params)
+      'firstPage': (pageName, params, _) => FirstRouteWidget(params),
+      'fragmentPage': (pageName, params, _) => FragmentPage(params)
     });
   }
 
@@ -35,4 +37,3 @@ class _MyAppState extends State<MyApp> {
   void _onRoutePushed(
       String pageName, String uniqueId, Map params, Route route, Future _) {}
 }
-
